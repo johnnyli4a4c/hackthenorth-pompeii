@@ -1,2 +1,2 @@
-hackthenorth
+Hack the North
 ============

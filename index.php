@@ -1,21 +1,17 @@
 <?php
-require 'vendor/autoload.php';
+	require 'vendor/autoload.php';
+	\Slim\Slim::registerAutoloader();
 
-$app = new \Slim\Slim();
+	$app = new \Slim\Slim();
+	$app->config(array(
+	    'templates.path' => '/var/www/html/hackthenorth'
+	));
 
-function getSentenceList($text) {
-	return explode(".", $text);
-}
+	function getSentenceList($text) {
+	    return explode(".", $text);
+	}
 
-$app->get('/text-to-wit/:name', function ($rawText) {
-	echo "Original Text: <br/>$rawText <br/><br/>";
-	echo "Parsed Text: <br/>";
-    $sentences = getSentenceList($rawText);
-    foreach ($sentences as $key => $sentence) {
-    	echo "$sentence<br/>";
-    }
-});
+	require 'routes.php';
 
-$app->run();
-
+	$app->run();
 ?>

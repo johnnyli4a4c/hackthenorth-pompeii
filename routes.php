@@ -65,7 +65,7 @@
 		}
 
 		$app->render('recordings.html', array(
-			'rawText' => $rawText,
+			'rawText' => nl2br($rawText),
 			'recapText' => $parseText['recap'],
 			'planningText' => $parseText['planning'],
 			'definitionsText' => $parseText['definitions']

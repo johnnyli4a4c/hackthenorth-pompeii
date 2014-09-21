@@ -4,7 +4,7 @@
 
 	$app = new \Slim\Slim();
 	$app->config(array(
-	    'templates.path' => '/var/www/html/hackthenorth'
+	    'templates.path' => '/var/www/hackthenorth'
 	));
 
 	require 'routes.php';

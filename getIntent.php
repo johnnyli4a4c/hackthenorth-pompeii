@@ -13,7 +13,7 @@
 	function witAI($text) {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,"https://api.wit.ai/message?v=20140920&q=" . urlencode($text));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Authorization: Bearer RRMYHEQXUC4CE6654GCJOPC6TGIISCPV"));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Authorization: Bearer F53N25NB7NWQJWZKM3M2PTBUAQYITNEZ"));
 
 		// in real life you should use something like:
 		// curl_setopt($ch, CURLOPT_POSTFIELDS, 
@@ -26,7 +26,7 @@
 		curl_close ($ch);
 		return $server_output;
 	}
-
+	/*
 	$rawText = "Good morning. It's Inauguration Day--Happy Inauguration Day to everyone--and I thought that actually the inauguration of Barack Obama today and the particular lecture in this class are very well suited to one another. Because although you see that the title of today's lecture is \"Technology and Revolution in Roman Art,\" I could also call it something like \"The Change the Romans Believed In.\" Because the change the Romans believed in, the change the Romans believed in was a shift from what we call traditional Roman architecture to innovative Roman architecture. And that's what we're going to be talking about today, what we call innovative, and what we'll call in the course of this semester, innovative Roman architecture.
 
 We've already talked about what we've called traditional Roman architecture, and I just want to look again with you, to begin today with the Temple of Portunus, that we looked at last time, the Temple of Portunus in Rome, near the Tiber River, a temple that was put up in the late second, early first century B.C. And we talked about the fact that this was a traditional Roman building of this day. A traditional Roman building though that was quite derivative, that looked back at Greek architecture, Greek religious architecture, and Etruscan religious architecture, and drew from both of those, drew elements from both of those, and combined them together into what we termed a new Roman creation, at least in the traditional vein. We talked about the fact that the Etruscan elements of this particular monument were its tall podium, were its deep porch, were the freestanding columns in that porch, were the single staircase and the emphasis on the façade, that having that single staircase achieved.
@@ -46,6 +46,13 @@ But with the introduction of concrete into architecture, under the Romans, build
 So we saw that already in the Temple of Vesta, even though it was a traditional temple, based on Greek and Etruscan models. And we'll see it again today, in several buildings, and I'll show you just one example, the last structure that we'll talk about today, the Sanctuary of Fortuna Primigenia at Palestrina, an extraordinary structure built on a hillside, that also used opus incertum as the facing. And you can see it used here for the wall and also for the coffered ceiling above. And so a stone facing, opus incertum, that was particularly favored in the second century B.C. and into the first century B.C. Over time the choice of facing changed. Although ashlar blocks, tufa, travertine, and opus incertum were popular in the second and first centuries, as time goes on things change.
 
 We'll see, under the Roman emperor Nerva [correction: Nero] there was a revolution, another kind of revolution of sorts, in Roman architecture, and we'll talk about the reasons for that and so on later in the semester. But with that revolution came an interest in a new facing material, namely brick -- brick that was originally stuccoed over. And, in fact, the opus incertum work and the tufa stone that we've talked about already today tended to be stuccoed over as well. But by the second century we begin to see an appreciation for brick in its own right, the attractiveness of brick, and the Romans begin to use exposed brick as the facing for their buildings. And I show you one example. It's a detail of a warehouse in the Roman port city of Ostia, that we'll look at later in the term, with this exposed brick facing; very attractive, different colorations and so on and so forth. Just to alert you to the fact that again the kind of facing that we're talking about today will not be the only facing that is used by the Romans over time.";
+*/
+	$rawText = "But for men, it's going to look more potentially like Figure 7-5. There's a small substitution effect but a 
+potentially big income effect or bigger than women. Now, how big it is, that's not clear. Because, once 
+again, men have nothing to do if they don't work. So it could be this ends up being bigger and smaller. 
+It's not clear how big this ends up being. But it's at least possible that you could have men having a 
+backward-bending or downward sloping labor supply curve. Because the income effect could even more 
+than offset the substitution effect. ";
 
 	echo "Original Text: <br/>$rawText <br/>";
     echo "Parsed Text: <br/>";

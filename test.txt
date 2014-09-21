@@ -1,0 +1,23 @@
+All right. So today we are going to start by reviewing income and substitution effects. 
+Because that's a pretty hard concept and pretty central to a lot of what we'll do for the rest of the 
+semester. And then we're going to dive in and talk about an application, a more interesting application, 
+of income and substitution effects which is the effects of wages on labor supply. 
+
+So let's review. If you take the handout, grab the handout and look at the first figure, it's the same as the 
+last figure of the previous lecture. To review, remember, whenever the price changes, a price change 
+can be decomposed into two effects, the substitution effect and the income effect. The substitution 
+effect is the change in the quantity demanded when the price changes, holding utility constant. 
+
+And as we proved last time, that is always negative, 0 or negative. It is always non-positive. It's always 
+true that when a price goes up, the substitution effect is negative. We proved that both mathematically 
+and graphically last time showing that if you're going to hold utility constant, and the price of a good is 
+going to go up, you're going to shift away from that good. OK. That's the substitution effect. 
+
+In our example, we showed graphically how you measure a substitution effect. You draw a new 
+imaginary budget constraint, BC3, which is parallel to the new budget constraint, BC2. So it's got the 
+new price ratio but tangent to the old indifference curve. 
+
+So the key thing to understand is the imaginary budget constraint, BC3, where it comes from. It's parallel 
+to the new budget constraint. That is it's got the new marginal rate of transformation, the new slope, 
+but it's tangent to the old indifference curve. That gets you to point B. And so the movement from A to B 
+is the substitution effect.

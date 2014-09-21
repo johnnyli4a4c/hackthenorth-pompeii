@@ -25,7 +25,7 @@
     <![endif]-->
   </head>
 
-  <body style="background-image:url(lush.jpg)">
+  <body style="background-image:url(building.jpg)">
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -36,14 +36,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="main.html"><strong>Pompeii</strong></a>
+          <a class="navbar-brand" href="/"><strong>Pompeii</strong></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="main.html">Home</a></li>
-            <li class="active"><a href="recordings.html">Recordings</a></li>
-            <li><a href="signin.html">Sign in</a></li>
-            <li><a href="signup.html">Sign up</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="recordings">Recordings</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -54,10 +52,42 @@
       <div class="starter-template">
         <h1>&nbsp</h1>
         <center><h2 class="form-signin-heading">Recordings</h2></center>
-        <p class="lead">
-          <font style="font-size:18px">No public lecture recordings available!</li>
-          <ul>
+        <p id="lead-content" class="lead">
+        <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist" id="myTab">
+            <li class="active"><a href="#fullTranscript" role="tab" data-toggle="tab" data-id="fulltranscript">Full Transcript</a></li>
+            <li><a href="#profile" role="tab" data-toggle="tab" data-id="recap">Recap</a></li>
+            <li><a href="#messages" role="tab" data-toggle="tab" data-id="planning">Planning</a></li>
+            <li><a href="#settings" role="tab" data-toggle="tab" data-id="definitions">Definitions</a></li>
           </ul>
+
+          <!-- Tab panes -->
+          <div style="background:#FFF; padding:25px 30px 40px;" class="tab-content">
+            <div class="tab-pane active" id="fulltranscript">
+              <?php echo $rawText ?>
+            </div>
+            <ul class="tab-pane" id="recap">
+              <?php
+                foreach($recapText as $key=>$value) {
+                  echo "<li>$value</li>";
+                }
+              ?>
+            </ul>
+            <ul class="tab-pane" id="planning">
+              <?php 
+                foreach($planningText as $key=>$value) {
+                  echo "<li>$value</li>";
+                }
+              ?>
+            </ul>
+            <ul class="tab-pane" id="definitions">
+              <?php 
+                foreach($definitionsText as $key=>$value) {
+                  echo "<li>$value</li>";
+                }
+              ?>
+            </ul>
+          </div>        
         </p>
       </div>
 
@@ -68,7 +98,46 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.0.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      Parse.initialize("HU72CYl6E2UcEwp8FJDKdHlvfV3zZFORMakm4n6i", "OnXsWdexpvJuVRXFm0gI9sCfbjiFVghSsF9T1Xla");    
+      /*var RecordingObj = Parse.Object.extend("RecordingObj");
+      var RecordingObj = new RecordingObj();
+      RecordingObj.save({
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        sentenceList: ["Hi my name is Johnny", "Testing, testing, one two three"],
+        plaintext: "Hi my name is Johnny. Testing, testing, one two three!"
+      }, {
+        success: function(object) {
+          console.log("success");
+        },
+        error: function(model, error) {
+          console.log("error");
+        }
+      });*/
+      
+      $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $('.tab-content').children().removeClass('active');
+        $('.tab-content #'+$(this).data('id')).addClass('active');
+        $(this).tab('show')
+      })
+      
+      var RecordingObj = Parse.Object.extend("RecordingObj");
+      var query = new Parse.Query(RecordingObj);
+      query.find({ 
+        success: function(results) {
+          var tableMarkUp = [];
+          for (key in results) {
+            tableMarkUp.push(results[key].get('plaintext'));
+          }
+          // results has the list of users with a hometown team with a winning record
+        }
+      });
+
+    </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   

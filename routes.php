@@ -48,20 +48,34 @@
 	    $parseText['recap'] = array();
 	    $parseText['planning'] = array();
 	    $parseText['definitions'] = array();
-	    foreach ($sentences as $key => $sentence) {
-	    	$result = witAI($sentence);
+	    $prevIntent = "";
+	    for ($i = 0; $i < count($sentences); $i++) {
+	    	$result = witAI($sentences[$i]);
 	    	if(!isset($result->outcomes[0]->intent)) break;
 	    	switch($result->outcomes[0]->intent) {
 				case "recap":
-					array_push($parseText['recap'], $sentence);
+					if ($result->outcomes[0]->intent == $prevIntent) {
+						$parseText['recap'][(count($parseText['recap'])-1)] .= ". " . $sentences[$i];
+					} else {
+						array_push($parseText['recap'], $sentences[$i]);
+					}
 					break;
 				case "planning":
-					array_push($parseText['planning'], $sentence);
+					if ($result->outcomes[0]->intent == $prevIntent) {
+						$parseText['planning'][(count($parseText['planning'])-1)] .= ". " . $sentences[$i];
+					} else {
+						array_push($parseText['planning'], $sentences[$i]);
+					}
 					break;
 				case "definitions":
-					array_push($parseText['definitions'], $sentence);
+					if ($result->outcomes[0]->intent == $prevIntent) {
+						$parseText['definitions'][(count($parseText['definitions'])-1)] .= ". " . $sentences[$i];
+					} else {
+						array_push($parseText['definitions'], $sentences[$i]);
+					}
 					break;
 			}
+			$prevIntent = $result->outcomes[0]->intent;
 		}
 
 		$app->render('recordings.html', array(

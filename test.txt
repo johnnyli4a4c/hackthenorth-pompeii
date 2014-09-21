@@ -21,3 +21,8 @@ So the key thing to understand is the imaginary budget constraint, BC3, where it
 to the new budget constraint. That is it's got the new marginal rate of transformation, the new slope, 
 but it's tangent to the old indifference curve. That gets you to point B. And so the movement from A to B 
 is the substitution effect.
+
+So the total price effect is the one we demonstrated at the beginning of the last lecture. We raised the 
+price of movies from $8 to $12. And we saw the number of movies consumed fell from 6 to 4. But what 
+we can see now to understand what's underneath that is two things, an effect of the fact that prices 
+change holding utility constant, and the fact that you're effectively poorer.
